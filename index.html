@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width,user-scalable=no" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Stack Tower 3D</title>
+  </head>
+  <body>
+    <header>
+      <div class="logoContainer">
+        <img src="logo.png" class="logoImage" alt="" />
+      </div>
+    </header>
+    <div id="container" onmousedown="party.confetti(this)">
+      <div id="game"></div>
+      <p id="text" class="blur-text">GDSC DUT</p>
+      <div id="score"><div id="score-number">0</div></div>
+      <div id="instructions">Click (or press the spacebar) to place the block</div>
+      <div class="game-over">
+        <h2>Game Over</h2>
+        <p id="highestScore">Highest score:</p>
+        <p>Click or spacebar to start again</p>
+      </div>
+      <div class="game-ready">
+        <div class="button" id="start-button" onmousedown="party.confetti(this)">Start</div>
+        <div></div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script>
+      party.confetti(runButton, {
+        count: party.variation.range(20, 30),
+        gravity: 800,
+      });
+    </script>
+    <!-- <script type="importmap">
+        {
+            "imports": {
+                "three": "./js/lib/three.module.js"
+             }
+        }    
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script> -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
